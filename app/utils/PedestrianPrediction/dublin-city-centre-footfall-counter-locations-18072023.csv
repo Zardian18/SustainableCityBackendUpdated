@@ -1,0 +1,35 @@
+_id,Counter Locations,Eco-Visio Oupput,Latitude,Longitude,Setup Date,User Type
+1,Henry Street,Henry Street/Coles Lane/Dunnes,53.34973,-6.2609,2013-07-16T00:00:00,Pedestrians
+2,O'Connell St Outside Clerys,O'Connell st/Princes st North,53.34902,-6.26005,2011-07-06T00:00:00,Pedestrians
+3,Mary Street,Mary st/Jervis st,53.34877,-6.26674,2011-09-06T00:00:00,Pedestrians
+4,Capel Street,Capel st/Mary street,53.34842,-6.26918,2011-01-08T00:00:00,Pedestrians
+5,Aston Quay,Aston Quay/Fitzgeralds,53.34662,-6.25982,2019-02-27T00:00:00,Pedestrians
+6,Grafton Street @ CompuB,Grafton Street/CompuB,53.34337,-6.25898,2019-02-27T00:00:00,Pedestrians
+7,Talbot Street North,Talbot st/Guineys,53.35054,-6.25528,2019-02-27T00:00:00,Pedestrians
+8,"Doilier Street, Burgh Quay",D'olier st/Burgh Quay,53.3469,-6.25872,2019-02-27T00:00:00,Pedestrians
+9,Dame Street,Dame Street/Londis,53.34424,-6.26116,2019-02-27T00:00:00,Pedestrians
+10,Talbot Street South,Talbot st/Murrays Pharmacy,53.35012,-6.2577,2019-02-27T00:00:00,Pedestrians
+11,"O'Connell St, Parnell St @ AIB",O'Connell St/Parnell St/AIB,53.35231721,-6.261675274,2019-03-19T00:00:00,Pedestrians
+12,Grafton Street / Nassau Street / Suffolk Street,Grafton Street / Nassau Street / Suffolk Street,53.34352,-6.25912,2019-02-27T00:00:00,Pedestrians
+13,"College Green, Bank Of Ireland",College Green/Bank Of Ireland,53.34505,-6.25939,2019-02-27T00:00:00,Pedestrians
+14,O'Connell St Outside Pennys,O'Connell St/Pennys Pedestrian,53.34874,-6.26011,2011-07-06T00:00:00,Pedestrians
+15,Grafton Street,Grafton st/Monsoon,53.34082,-6.26035,2016-09-05T00:00:00,Pedestrians
+16,Westmoreland Street East,Westmoreland Street East/Fleet street,53.34554,-6.25919,2016-06-05T00:00:00,Pedestrians
+17,Dawson Street,Dawson Street/Molesworth Pedestrian,53.341194,-6.258337,2016-06-05T00:00:00,Pedestrians
+18,Liffey Street,Liffey st/Halfpenny Bridge ,53.34687,-6.26335,2011-09-06T00:00:00,Pedestrians
+19,Westmoreland Street West,Westmoreland Street West/Carrolls,53.34634753,-6.259197438,2016-06-05T00:00:00,Pedestrians
+20,College Green @ Church Lane,College Green/Church Lane,53.3442633,-6.260774367,2019-02-27T00:00:00,Pedestrians
+21,College Green - Dame St Side,College st/Westmoreland st,53.34509951,-6.258778243,2019-02-27T00:00:00,Pedestrians
+22,Bachelors Walk,Bachelors walk/Bachelors way,53.34719979,-6.260863323,2019-02-27T00:00:00,Pedestrians
+23,Baggot st lower/Wilton tce inbound,Baggot st lower/Wilton tce inbound,53.33448,-6.24577,2020-07-24T00:00:00,Pedestrians
+24,Baggot st upper/Mespil rd/Bank,Baggot st upper/Mespil rd/Bank,53.33385,-6.24469,2020-07-24T00:00:00,Pedestrians
+25,Grand Canal st upp/Clanwilliam place,Grand Canal st upp/Clanwilliam place,53.33851,-6.2379,2020-07-24T00:00:00,Pedestrians
+26,Grand Canal st upp/Clanwilliam place/Google,Grand Canal st upp/Clanwilliam place/Google,53.33851,-6.239,2020-07-24T00:00:00,Pedestrians
+27,Newcomen Bridge/Charleville mall inbound,Newcomen Bridge/Charleville mall inbound,53.35645,-6.24418,2020-07-24T00:00:00,Pedestrians
+28,Newcomen Bridge/Charleville mall outbound,Newcomen Bridge/Charleville mall outbound,53.35648,-6.24418,2020-07-24T00:00:00,Pedestrians
+29,North Wall Quay/Samuel Beckett bridge East,North Wall Quay/Samuel Beckett bridge East,53.346,-6.24173,2020-07-24T00:00:00,Pedestrians
+30,North Wall Quay/Samuel Beckett bridge West,North Wall Quay/Samuel Beckett bridge West,53.34748,-6.24132,2020-07-24T00:00:00,Pedestrians
+31,Phibsborough Rd/Enniskerry Road,Phibsborough Rd/Enniskerry Road,53.36334,-6.27187,2020-07-24T00:00:00,Pedestrians
+32,Phibsborough Rd/Munster St (Removed due to Overcounting),Phibsborough Rd/Munster St (Removed due to Overcounting),53.36322,-6.27247,2020-07-24T00:00:00,Pedestrians
+33,Richmond st south/Portabello Harbour inbound,Richmond st south/Portabello Harbour inbound,53.33034,-6.26427,2020-07-24T00:00:00,Pedestrians
+34,Richmond st south/Portabello Harbour outbound,Richmond st south/Portabello Harbour outbound,53.33023,-6.26397,2020-07-24T00:00:00,Pedestrians
