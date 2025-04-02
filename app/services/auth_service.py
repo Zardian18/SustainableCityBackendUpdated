@@ -10,7 +10,7 @@ import os
 load_dotenv()
 
 # Helper function to generate JWT
-def create_token(username, role):
+def create_token(username, role, mode):
     if role is None:
         role = "user"  # Set a default value
 
@@ -18,7 +18,8 @@ def create_token(username, role):
 
     payload = {
         'username': username,
-        'role': str(role),  # Ensure it's a string
+        'role': str(role),  # Ensure it's a string,
+        'mode': str(mode),
         'exp': datetime.utcnow() + timedelta(hours=2)
     }
 
@@ -28,9 +29,11 @@ def create_token(username, role):
 # Register user function
 def register_user():
     data = request.json
+    supervisor_name = data['supervisor_name']
     username = data['username']
     password = data['password']
     role = data['role']
+    mode = data['mode']
     security_question = data['security_question']
     security_question_answer = data['security_answer']
 
@@ -48,9 +51,11 @@ def register_user():
 
         # Create a new user instance
         new_user = Users(
+            supervisor_name=supervisor_name,
             username=username,
             password=hashed_password.decode('utf-8'),  # Store as a string
             role=role,
+            mode=mode,
             security_question=security_question,
             security_question_answer=security_question_answer
         )
@@ -73,11 +78,14 @@ def login_user():
 
     try:
         user = Users.query.filter_by(username=username).first()
-
         if user and bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):  # Password matches
-            token = create_token(username, user.role)
-            return jsonify({"message": "Login successful!", "token": token}), 200
+            token = create_token(username, user.role, user.mode)
+            return jsonify({"message": "Login successful!", "token": token, "username": user.username, "role":user.mode}), 200
         else:
             return jsonify({"error": "Invalid username or password"}), 401
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+        
+    
+    
+    
