@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend:5000'] # Use Docker service name if in a network
+
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+  - job_name: 'blackbox-http'
+    metrics_path: /probe
+    params:
+      module: [http_2xx] # Predefined module in Blackbox Exporter
+    static_configs:
+      - targets:
+        - http://localhost:3000/ # Frontend health
+        - http://127.0.0.1:5000  # API health check
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115 # Blackbox Exporter address
