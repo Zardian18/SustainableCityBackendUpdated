@@ -78,13 +78,22 @@ def login_user():
 
     try:
         user = Users.query.filter_by(username=username).first()
-        if user and bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):  # Password matches
-            token = create_token(username, user.role, user.mode)
-            return jsonify({"message": "Login successful!", "token": token, "username": user.username, "role":user.mode}), 200
-        else:
-            return jsonify({"error": "Invalid username or password"}), 401
+        if not user:
+            return jsonify({"error": "Username not found"}), 404
+
+        if not bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
+            return jsonify({"error": "Invalid password"}), 401
+
+        token = create_token(username, user.role, user.mode)
+        return jsonify({
+            "message": "Login successful!",
+            "token": token,
+            "username": user.username,
+            "role": user.mode
+        }), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
         
     
     
