@@ -24,7 +24,8 @@ def reroute():
         end_lng = end.get('lng')
         manager_name = data.get('manager_name')
         mode_of_transport = data.get('mode_of_transport', 'bus')
-        station_name = data.get('station_name')  # Extract station_name
+        station_name = data.get('station_name')
+        event_name = data.get('event_name')  # Extract event_name
 
         if not all([manager_name, start_lat, start_lng, end_lat, end_lng]):
             return jsonify({'error': 'Missing required fields: manager_name and coordinates are required'}), 400
@@ -33,6 +34,8 @@ def reroute():
             return jsonify({'error': 'bus_id is required for bus mode'}), 400
         if mode_of_transport == 'bike' and bike_id is None:
             return jsonify({'error': 'bike_id is required for bike mode'}), 400
+        if mode_of_transport == 'event' and event_name is None:  # Require event_name for events
+            return jsonify({'error': 'event_name is required for event mode'}), 400
 
         timestamp = datetime.utcnow()
         notification = Notification(
@@ -46,7 +49,8 @@ def reroute():
             start_lng=start_lng,
             end_lat=end_lat,
             end_lng=end_lng,
-            station_name=station_name if mode_of_transport == 'bike' else None  # Set for bike mode
+            station_name=station_name if mode_of_transport == 'bike' else None,
+            event_name=event_name if mode_of_transport == 'event' else None  # Set for event mode
         )
 
         db.session.add(notification)

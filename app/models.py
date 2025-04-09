@@ -36,7 +36,8 @@ class Notification(db.Model):
     start_lng = db.Column(db.Float, nullable=False)
     end_lat = db.Column(db.Float, nullable=False)
     end_lng = db.Column(db.Float, nullable=False)
-    station_name = db.Column(db.String(255), nullable=True)  # New field for bike station name
+    station_name = db.Column(db.String(255), nullable=True)  # For bike stations
+    event_name = db.Column(db.String(255), nullable=True)   # New field for event name
 
     def __init__(
         self,
@@ -51,7 +52,8 @@ class Notification(db.Model):
         route_id=None,
         bus_id=None,
         bike_id=None,
-        station_name=None  # Added station_name parameter
+        station_name=None,
+        event_name=None  # Added event_name parameter
     ):
         self.manager_name = manager_name
         self.status = status
@@ -65,6 +67,7 @@ class Notification(db.Model):
         self.end_lat = end_lat
         self.end_lng = end_lng
         self.station_name = station_name
+        self.event_name = event_name
 
     def to_dict(self):
         return {
@@ -80,5 +83,6 @@ class Notification(db.Model):
             'start_lng': self.start_lng,
             'end_lat': self.end_lat,
             'end_lng': self.end_lng,
-            'station_name': self.station_name  # Include in serialization
+            'station_name': self.station_name,
+            'event_name': self.event_name  # Include in serialization
         }
