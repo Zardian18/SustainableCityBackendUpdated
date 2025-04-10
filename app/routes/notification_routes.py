@@ -34,8 +34,8 @@ def reroute():
             return jsonify({'error': 'bus_id is required for bus mode'}), 400
         if mode_of_transport == 'bike' and bike_id is None:
             return jsonify({'error': 'bike_id is required for bike mode'}), 400
-        if mode_of_transport == 'event' and event_name is None:  # Require event_name for events
-            return jsonify({'error': 'event_name is required for event mode'}), 400
+        # if mode_of_transport == 'pedestrian' and event_name is None:  # Require event_name for events
+        #     return jsonify({'error': 'event_name is required for event mode'}), 400
 
         timestamp = datetime.utcnow()
         notification = Notification(
