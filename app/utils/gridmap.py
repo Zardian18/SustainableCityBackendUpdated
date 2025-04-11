@@ -264,7 +264,7 @@ def get_sustainable_route(start_lat, start_lon, end_lat, end_lon):
         start_coord = (start_lon, start_lat)
         end_coord = (end_lon, end_lat)
         route = get_route(start_coord, end_coord, avoid_bus_polygons)
-        return {"route": route}
+        return {"status": "success","route": route}
     except Exception as e:
         return {"status": "error", "message": f"Failed to get sustainable route: {str(e)}"}
 
@@ -315,7 +315,7 @@ def get_clean_route_data(start_lat, start_lon, end_lat, end_lon):
         start_coord = (start_lon, start_lat)
         end_coord = (end_lon, end_lat)
         route = get_clean_route(start_coord, end_coord, monitor_data)
-        return {"route": route}
+        return {"status": "success","route": route}
     except Exception as e:
         return {"status": "error", "message": f"Failed to get clean route: {str(e)}"}
 
